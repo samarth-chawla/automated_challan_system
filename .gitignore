@@ -1,0 +1,9 @@
+venv/
+node_modules/
+*.mp4
+*.zip
+*.pt
+*.h5
+__pycache__/
+*.jpg
+dataset/
