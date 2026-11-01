@@ -1,9 +1,42 @@
+# Python environments and generated caches
+.venv/
 venv/
-node_modules/
-*.mp4
-*.zip
-*.pt
-*.h5
 __pycache__/
-*.jpg
-dataset/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Downloaded models and local video/dataset inputs
+/models/
+*.pt
+*.onnx
+*.h5
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.zip
+/dataset/
+/data/
+
+# Session records, evidence, recordings and temporary downloads
+/runs/
+/violation_*.jpg
+/frame_*.jpg
+*.log
+*.tmp
+*.download
+
+# Local settings and operating-system files
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/

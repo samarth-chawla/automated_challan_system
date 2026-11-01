@@ -1,0 +1,121 @@
+[
+  {
+    "id": 23,
+    "type": "car",
+    "box": [
+      840.3417358398438,
+      439.55242919921875,
+      993.6688842773438,
+      585.7660522460938
+    ],
+    "moving": true,
+    "dx": -7.319,
+    "dy": 2.641,
+    "samples": 10,
+    "points": 39,
+    "speed_kmh": 9.0,
+    "speed_status": "demo_estimate"
+  },
+  {
+    "id": 79,
+    "type": "car",
+    "box": [
+      992.8128051757812,
+      466.58294677734375,
+      1018.9149169921875,
+      494.6629943847656
+    ],
+    "moving": false,
+    "dx": 0.0,
+    "dy": 0.0,
+    "samples": 0,
+    "points": 0,
+    "speed_kmh": null,
+    "speed_status": "motion_unconfirmed"
+  },
+  {
+    "id": 95,
+    "type": "car",
+    "box": [
+      776.74951171875,
+      449.1783142089844,
+      857.2922973632812,
+      525.0924682617188
+    ],
+    "moving": false,
+    "dx": 0.0,
+    "dy": 0.0,
+    "samples": 0,
+    "points": 0,
+    "speed_kmh": null,
+    "speed_status": "motion_unconfirmed"
+  },
+  {
+    "id": 107,
+    "type": "car",
+    "box": [
+      618.2857055664062,
+      434.3170166015625,
+      755.39306640625,
+      563.7546997070312
+    ],
+    "moving": false,
+    "dx": -12.452,
+    "dy": 1.274,
+    "samples": 8,
+    "points": 6,
+    "speed_kmh": null,
+    "speed_status": "motion_unconfirmed"
+  },
+  {
+    "id": 21,
+    "type": "car",
+    "box": [
+      0.0,
+      369.5787658691406,
+      652.8921508789062,
+      693.1264038085938
+    ],
+    "moving": true,
+    "dx": -76.135,
+    "dy": 9.26,
+    "samples": 4,
+    "points": 41,
+    "speed_kmh": null,
+    "speed_status": "outside_calibration"
+  },
+  {
+    "id": 116,
+    "type": "bus",
+    "box": [
+      484.0691223144531,
+      277.25921630859375,
+      688.4088134765625,
+      505.05560302734375
+    ],
+    "moving": false,
+    "dx": 0.0,
+    "dy": 0.0,
+    "samples": 0,
+    "points": 0,
+    "speed_kmh": null,
+    "speed_status": "motion_unconfirmed"
+  },
+  {
+    "id": 117,
+    "type": "bus",
+    "box": [
+      669.55810546875,
+      362.4857177734375,
+      773.411376953125,
+      460.0176086425781
+    ],
+    "moving": false,
+    "dx": 0.0,
+    "dy": 0.0,
+    "samples": 0,
+    "points": 0,
+    "speed_kmh": null,
+    "speed_status": "motion_unconfirmed"
+  }
+]

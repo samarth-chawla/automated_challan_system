@@ -1,0 +1,177 @@
+{
+  "line": [
+    [
+      190,
+      635
+    ],
+    [
+      1080,
+      620
+    ]
+  ],
+  "observations": [
+    {
+      "frame": 379,
+      "signal": "RED",
+      "point": [
+        568.4721374511719,
+        638.6438598632812
+      ],
+      "moving": false
+    },
+    {
+      "frame": 380,
+      "signal": "RED",
+      "point": [
+        556.1433410644531,
+        642.2837524414062
+      ],
+      "moving": false
+    },
+    {
+      "frame": 381,
+      "signal": "RED",
+      "point": [
+        529.3108215332031,
+        658.1878051757812
+      ],
+      "moving": false
+    },
+    {
+      "frame": 382,
+      "signal": "RED",
+      "point": [
+        518.5988616943359,
+        672.506103515625
+      ],
+      "moving": false
+    },
+    {
+      "frame": 383,
+      "signal": "RED",
+      "point": [
+        494.67518615722656,
+        679.2416381835938
+      ],
+      "moving": false
+    },
+    {
+      "frame": 384,
+      "signal": "RED",
+      "point": [
+        476.84959411621094,
+        682.3302001953125
+      ],
+      "moving": false
+    },
+    {
+      "frame": 385,
+      "signal": "RED",
+      "point": [
+        456.43605041503906,
+        685.1480102539062
+      ],
+      "moving": false
+    },
+    {
+      "frame": 386,
+      "signal": "RED",
+      "point": [
+        439.96763610839844,
+        687.7982177734375
+      ],
+      "moving": false
+    },
+    {
+      "frame": 387,
+      "signal": "RED",
+      "point": [
+        424.6607666015625,
+        690.8200073242188
+      ],
+      "moving": false
+    },
+    {
+      "frame": 388,
+      "signal": "RED",
+      "point": [
+        415.77723693847656,
+        692.6392822265625
+      ],
+      "moving": false
+    },
+    {
+      "frame": 389,
+      "signal": "RED",
+      "point": [
+        411.00721740722656,
+        693.6016235351562
+      ],
+      "moving": false
+    },
+    {
+      "frame": 390,
+      "signal": "RED",
+      "point": [
+        402.7921905517578,
+        696.6498413085938
+      ],
+      "moving": false
+    },
+    {
+      "frame": 391,
+      "signal": "RED",
+      "point": [
+        398.30186462402344,
+        698.6149291992188
+      ],
+      "moving": true
+    },
+    {
+      "frame": 392,
+      "signal": "RED",
+      "point": [
+        392.7013702392578,
+        700.9237060546875
+      ],
+      "moving": true
+    },
+    {
+      "frame": 393,
+      "signal": "RED",
+      "point": [
+        386.7110290527344,
+        705.4579467773438
+      ],
+      "moving": true
+    },
+    {
+      "frame": 394,
+      "signal": "RED",
+      "point": [
+        380.28880310058594,
+        707.591796875
+      ],
+      "moving": true
+    },
+    {
+      "frame": 395,
+      "signal": "RED",
+      "point": [
+        372.84120178222656,
+        710.60693359375
+      ],
+      "moving": true
+    },
+    {
+      "frame": 396,
+      "signal": "GREEN",
+      "point": [
+        366.71575927734375,
+        713.7871704101562
+      ],
+      "moving": true
+    }
+  ],
+  "expected_alert_frame": 393
+}
