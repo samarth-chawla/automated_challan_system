@@ -5,7 +5,6 @@ A local Python/OpenCV demo for `tr2.mp4`: track vehicles, read visible plates, c
 ## Run
 
 ```powershell
-cd "D:\Desktop\College\Mini Project\traffic-signal-violation-detection"
 .\.venv\Scripts\python.exe -X utf8 traffic_violation_detection1.py
 ```
 
@@ -154,18 +153,77 @@ For real km/h validation, measure the road patch/camera geometry, enter the actu
 
 See [Ultralytics' calibration guidance](https://docs.ultralytics.com/guides/speed-estimation/) and [OpenCV perspective transforms](https://docs.opencv.org/4.13.0/da/d54/group__imgproc__transform.html).
 
-## Fresh installation
+## Run after cloning from GitHub (Windows PowerShell)
 
-The existing `.venv` is configured. For a fresh environment with a compatible 64-bit Python installation:
+Prerequisites: Git, 64-bit Python 3.12 with the `py` launcher, and internet access for dependency/model downloads. These commands use the environment's Python directly, so activating it or changing PowerShell's execution policy is unnecessary.
+
+1. Clone the repository and enter its folder:
+
+   ```powershell
+   git clone https://github.com/samarth-chawla/automated_challan_system.git
+   cd automated_challan_system
+   ```
+
+2. Create the environment and install dependencies:
+
+   ```powershell
+   py -3.12 -m venv .venv
+   .\.venv\Scripts\python.exe -X utf8 -m pip install --upgrade pip
+   .\.venv\Scripts\python.exe -X utf8 -m pip install -r requirements.txt
+   .\.venv\Scripts\python.exe -X utf8 -m pip install --force-reinstall --no-deps opencv-python
+   ```
+
+   Install the desktop OpenCV files last because OCR dependencies also install headless OpenCV. The desktop build is needed for the video window. If `py -3.12` is unavailable, install 64-bit Python 3.12 before continuing.
+
+3. Download the plate detector and OCR assets:
+
+   ```powershell
+   .\.venv\Scripts\python.exe -X utf8 download_plate_model.py
+   ```
+
+   This creates `license_plate.pt` and the OCR files in `models/`, verifying their SHA256 checksums. The vehicle detector `yolov8m.pt` downloads on first run if absent; keep internet available for that run.
+
+4. Obtain the demo video `tr2.mp4` from the project owner and put it in the repository root, beside `anpr_demo.py`. Videos, model weights, `.venv/` and run results are excluded from Git, so cloning does not supply them. The configured signal and road geometry are specific to this demo clip; renaming another video to `tr2.mp4` does not calibrate it.
+
+5. Start the application:
+
+   ```powershell
+   .\.venv\Scripts\python.exe -X utf8 traffic_violation_detection1.py
+   ```
+
+   Click the video window. **Space** or **p** pauses/resumes; **q** or **Esc** exits and saves the session. No API key or database setup is required.
+
+6. Open the newly printed `runs/session_.../` directory. `all_violations.csv` and `all_violations.json` contain the combined typed alerts; `vehicles.csv` contains tracked vehicles and plate readings. The evidence images are in `violations/` and `speed_violations/`.
+
+To process without a window and save an annotated video:
 
 ```powershell
-py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install --upgrade pip
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe download_plate_model.py
+.\.venv\Scripts\python.exe -X utf8 traffic_violation_detection1.py --headless --save-video
 ```
 
-The download script retrieves and verifies the detector plus the OCR model/configuration. Supply `tr2.mp4`; videos and models are ignored by Git. `yolov8m.pt` is the vehicle model; Ultralytics can download it if missing. After setup, default inference stays local and needs no API key or cloud OCR.
+For a short initial check:
+
+```powershell
+.\.venv\Scripts\python.exe -X utf8 traffic_violation_detection1.py --headless --max-frames 30
+```
+
+After setup, the default inference runs locally. A GPU is optional; the default device is CPU.
+
+## Update an existing clone
+
+From the repository folder, after saving any local work:
+
+```powershell
+git pull
+.\.venv\Scripts\python.exe -X utf8 -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -X utf8 -m pip install --force-reinstall --no-deps opencv-python
+.\.venv\Scripts\python.exe -X utf8 download_plate_model.py
+.\.venv\Scripts\python.exe -X utf8 traffic_violation_detection1.py
+```
+
+The model downloader reuses verified files. Local videos and earlier session results remain on disk when pulling code updates.
+
+## Models and OpenCV troubleshooting
 
 Models:
 
@@ -178,7 +236,7 @@ Both OCR libraries depend on headless OpenCV, while the window needs desktop Ope
 .\.venv\Scripts\python.exe -m pip install --force-reinstall --no-deps opencv-python
 ```
 
-On Windows, `cv2.getBuildInformation()` should report `GUI: WIN32UI`. The retained `.venv` has a GUI-capable build. The unused `venv` was removed.
+On Windows, `cv2.getBuildInformation()` should report `GUI: WIN32UI` for a GUI-capable build.
 
 ## Options and tests
 
